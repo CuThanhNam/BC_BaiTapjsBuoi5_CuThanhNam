@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <form class="form-group">
+        <div class="container form-group">
+          <div>
+            <h2>Bài 1: Quản lý tuyển sinh</h2>
+            <p>Điểm chuẩn</p>
+            <input class=" form-control w-25" id="diemChuan" placeholder="Điểm chuẩn" />
+          </div>
+          <div>
+            <p>Chọn khu vực (A, B, C hoặc x)</p>
+            <input class="form-control w-25"id="chonKhuVuc" placeholder="Chọn khu vực" />
+          </div>
+          <div>
+              <p>Chọn đối tượng (1, 2, 3 hoặc 0)</p>
+              <input class="form-control w-25" id="chonDoiTuong" placeholder="Chọn đối tượng" />
+            </div>
+            <div>
+              <p>Điểm môn thứ 1</p>
+              <input class="form-control w-25" id="diemMonThu1" placeholder="Điểm môn thứ 1" />
+            </div>
+            <div>
+              <p>Điểm môn thứ 2</p>
+              <input class="form-control w-25" id="diemMonThu2" placeholder="Điểm môn thứ 2" />
+            </div>
+            <div>
+              <p>Điểm môn thứ 3</p>
+              <input class="form-control w-25" id="diemMonThu3" placeholder="Điểm môn thứ 3" />
+            </div>
+            <button onclick="tongDiem()" id="btntongDiem" class="btn btn-success ">Kết quả</button>
+            <div class="mt-2 alert alert-success w-25">
+              Kết quả : <span id="tongDiemSo"></span>
+            </div>
+            <hr>
+          <div>
+            <h2>Bài 2: Tính Tiền điện</h2>
+            <p>Nhập họ tên</p>
+            <input class="form-control w-25" id="tenNguoiDung" placeholder="Nhập họ tên" />
+          </div>
+          <div>
+            <p>Nhập số kw</p>
+            <input class="form-control w-25" id="soKWTieuThu" placeholder="Nhập số kw" />
+          </div>
+          <button onclick="tinhTienDien()" id="btntinhTienDien" class="btn btn-success ">Tính tiền điện</button>
+          <div class="mt-2 alert alert-success w-25">
+            Kết quả : <p id="tenNguoiDung"></p><p id="soKw"></p><p id="tongTien"></p>
+          </div>
+          <hr>
+          <div>
+            <h2>Bài 3: Tính thuế thu nhập cá nhân</h2>
+            <p>Nhập họ tên</p>
+            <input class="form-control w-25" id="tenNguoiNopThue" placeholder="Nhập họ tên" />
+          </div>
+          <div>
+            <p>Tổng thu nhập năm</p>
+            <input class="form-control w-25" id="tongThuNhapNam" placeholder="Tổng thu nhập năm" />
+          </div>
+          <div>
+            <p>Số người phụ thuộc</p>
+            <input class="form-control w-25" id="soNguoiPhuThuoc" placeholder="Số người phụ thuộc" />
+          </div>
+          <button onclick="tinhThue()" id="btnTinhThue" class="btn btn-success ">Tính tiền thuế</button>
+          <div class="mt-2 alert alert-success w-25">
+            Kết quả : <span id="thue"></span>
+          </div>
+          <hr>
+          <div>
+            <h2>Bài 4: Tính tiền cáp</h2>
+            <p>Chọn loại khách hàng</p>
+            <input class="form-control w-25" id="loaiKhachhang" placeholder="Chọn loại khách hàng" />
+          </div>
+          <div>
+            <p>Nhập mã khách hàng</p>
+            <input class="form-control w-25" id="soKetNoi" placeholder="Nhập mã khách hàng" />
+          </div>
+          <div>
+            <p>Số kênh cao cấp</p>
+            <input class="form-control w-25" id="soKenhCaoCap" placeholder="Số kênh cao cấp" />
+          </div>
+          <button onclick="tinhTienCap()" id="btnTinhThue" class="btn btn-success ">Tính tiền cáp</button>
+          <div class="mt-2 alert alert-success w-25">
+            Kết quả : <span id="TienCap"></span>
+          </div>
+        </div>
+      </form>
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
