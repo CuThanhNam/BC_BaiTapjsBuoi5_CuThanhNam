@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <form class="form-group">
+    <div class="form-group">
         <div class="container form-group">
           <div>
             <h2>Bài 1: Quản lý tuyển sinh</h2>
@@ -34,7 +34,7 @@
               <p>Điểm môn thứ 3</p>
               <input class="form-control w-25" id="diemMonThu3" placeholder="Điểm môn thứ 3" />
             </div>
-            <button onclick="tongDiem()" id="btntongDiem" class="btn btn-success ">Kết quả</button>
+            <button onclick="tongDiem()" id="btntongDiem" class="btn btn-success ">Xét tuyển</button>
             <div class="mt-2 alert alert-success w-25">
               Kết quả : <span id="tongDiemSo"></span>
             </div>
@@ -42,7 +42,7 @@
           <div>
             <h2>Bài 2: Tính Tiền điện</h2>
             <p>Nhập họ tên</p>
-            <input class="form-control w-25" id="tenNguoiDung" placeholder="Nhập họ tên" />
+            <input class="form-control w-25" id="tenNguoiTieuDung" placeholder="Nhập họ tên" />
           </div>
           <div>
             <p>Nhập số kw</p>
@@ -50,7 +50,7 @@
           </div>
           <button onclick="tinhTienDien()" id="btntinhTienDien" class="btn btn-success ">Tính tiền điện</button>
           <div class="mt-2 alert alert-success w-25">
-            Kết quả : <p id="tenNguoiDung"></p><p id="soKw"></p><p id="tongTien"></p>
+            Kết quả : <span id="tenNguoiDung"></span><span id="soKw"></span><span id="tongTien"></span>
           </div>
           <hr>
           <div>
@@ -68,28 +68,37 @@
           </div>
           <button onclick="tinhThue()" id="btnTinhThue" class="btn btn-success ">Tính tiền thuế</button>
           <div class="mt-2 alert alert-success w-25">
-            Kết quả : <span id="thue"></span>
+            Kết quả : <span id="hoTen"></span><span id="thue"></span><span id="tongThuNhap"></span>
           </div>
           <hr>
           <div>
             <h2>Bài 4: Tính tiền cáp</h2>
-            <p>Chọn loại khách hàng</p>
-            <input class="form-control w-25" id="loaiKhachhang" placeholder="Chọn loại khách hàng" />
-          </div>
-          <div>
-            <p>Nhập mã khách hàng</p>
-            <input class="form-control w-25" id="soKetNoi" placeholder="Nhập mã khách hàng" />
-          </div>
-          <div>
-            <p>Số kênh cao cấp</p>
-            <input class="form-control w-25" id="soKenhCaoCap" placeholder="Số kênh cao cấp" />
-          </div>
-          <button onclick="tinhTienCap()" id="btnTinhThue" class="btn btn-success ">Tính tiền cáp</button>
-          <div class="mt-2 alert alert-success w-25">
-            Kết quả : <span id="TienCap"></span>
-          </div>
+            <form id="billingForm">
+              <label for="customerId">Mã khách hàng:</label>
+              <input type="text" id="customerId" required><br><br>
+          
+              <label for="customerType">Loại khách hàng:</label>
+              <select id="customerType" onchange="toggleConnectionInput()">
+                <option value="residential">Nhà dân</option>
+                <option value="business">Doanh nghiệp</option>
+              </select><br><br>
+          
+              <div id="connectionInput" style="display: none;">
+                <label for="connections">Số kết nối:</label>
+                <input type="number" id="connections" min="0" value="0"><br><br>
+              </div>
+          
+              <label for="premiumChannels">Số kênh cao cấp:</label>
+              <input type="number" id="premiumChannels" min="0" value="0"><br><br>
+          
+              <button type="button" onclick="calculateBill()">Tính tiền cáp</button>
+            </form>
+            <div class="color">
+              <span>Kết quả :</span>
+              <p id="result"></p>
+            </div>
         </div>
-      </form>
+      </div>
 
 
     <script src="./js/index.js"></script>

@@ -11,3 +11,19 @@
     margin-top: 10px;
     background-color: rgb(43, 201, 96);
 }
+.color{
+    background-color: rgb(43, 201, 96);
+}
+button{
+    background-color: rgba(0, 123, 255, 0.95);
+    color: white;
+    border: 1px solid blue;
+}
+button:hover{
+    background-color: blue;
+    transition: all 0.5s;
+}
+p{
+    
+    
+}
