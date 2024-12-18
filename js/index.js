@@ -248,29 +248,24 @@ function calculateBill() {
 //Mô hình 3 khối
 /**
  * Đầu vào
- -3 biến loaiKhachHang, soKetNoi và soKenh
+ -4 biến customerId, customerType, premiumChannels và connections
  * Các bước thực hiện
- -Tạo 3 biến loaiKhachHang, soKetNoi và soKenh
- -Tạo biến tienCap
+ -Tạo 4 biến customerId, customerType, premiumChannels và connections
+ -Tạo biến totalBill
  -Sử dụng if-else và công thức tính tiển cáp:
-  switch (loaiKhachHang) {
-    case "personal": {
-      let phiHoaDon = 4.5;
-      let phiDichVu = 20.5;
-      let phiThueKenh = 7.5;
-      tienCap = phiHoaDon + phiDichVu + soKenh * phiThueKenh;
-      return tienCap;
-    }
-    case "group": {
-      let phiHoaDon = 15;
-      let phiKetNoi = 7.5;
-      let phiKetNoiTren10 = 5;
-      let phiThueKenh = 50;
-      let tienKetNoi =
-        soKetNoi <= 10 ? soKetNoi * phiKetNoi : phiKetNoi * 10 + (soKetNoi - 10) * phiKetNoiTren10;
-      tienCap = phiHoaDon + tienKetNoi + soKenh * phiThueKenh;
-      return tienCap;
-    }
+  if (customerType === "residential") {
+    // Nhà dân
+    const processingFee = 4.5;
+    const basicServiceFee = 20.5;
+    const premiumChannelFee = 7.5 * premiumChannels;
+    totalBill = processingFee + basicServiceFee + premiumChannelFee;
+
+  } else if (customerType === "business") {
+    // Doanh nghiệp
+    const processingFee = 15;
+    const basicServiceFee = connections <= 10 ? 75 : 75 + (connections - 10) * 5;
+    const premiumChannelFee = 50 * premiumChannels;
+    totalBill = processingFee + basicServiceFee + premiumChannelFee;
   }
  -In kết quả ra console
  * Đầu ra
